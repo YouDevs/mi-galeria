@@ -1,27 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi galería de Arte</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <style>
+            body {
+                background-color: #F9F9F9;
+                font-family: 'Arial', sans-serif;
+                color: #333333;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+    
+            h1, p {
+                max-width: 800px; /* Ajusta este valor según prefieras */
+            }
+    
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 20px;
+                padding: 20px;
+                width: 80%; /* Ajusta al ancho deseado */
+                max-width: 1200px; /* Evita que la cuadrícula se vuelva demasiado ancha en pantallas grandes */
+            }
+    
+            .img-box {
+                background-color: #fff;
+                padding: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+    
+            .img-box img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 8px; /* Añade bordes redondeados a las imágenes */
+            }
+    
+            a, a:visited {
+                color: #E9A6A6;
+                text-decoration: none;
+                font-weight: bold; /* Hace que el enlace sea más notorio */
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
+    
+            @media (max-width: 768px) {
+                .container {
+                    grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas más pequeñas */
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .container {
+                    grid-template-columns: 1fr; /* Una sola columna para pantallas muy pequeñas */
+                }
+            }
+            .img-box {
+                background-color: #fff;
+                padding: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                transition: transform 0.2s; /* Añade una transición suave */
+            }
 
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+            .img-box:hover {
+                transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+            }
 
+            .img-box img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 8px;
+            }
+
+            .info {
+                text-align: left; /* Alinea el texto a la izquierda para la descripción y el precio */
+                padding-top: 10px; /* Espacio entre la imagen y el texto */
+            }
+
+            .info h3 {
+                margin-top: 0;
+                color: #333;
+                font-size: 1.2em; /* Ajusta este valor según necesites */
+            }
+
+            .info p {
+                margin: 5px 0; /* Reduce el espacio entre párrafos */
+                font-size: 0.9em; /* Tamaño de fuente para la descripción */
+            }
+
+            .precio {
+                font-weight: bold;
+                color: #E9A6A6; /* Utiliza el color de acento para el precio */
+                font-size: 1.1em; /* Tamaño de fuente para el precio */
+            }
+        </style>
+    
+        <title>Mi Galería de Arte</title>
 </head>
 <body>
     <h1> Bienvenidos a mi Galería de Arte </h1>
     <p> Estas son algunas de mis obras: </p>
-    <img src="obra1.webp" alt="Mi 1er obra">
-    <img src="obra2.webp" alt="Mi 2da obra">
-    <img src="obra3.webp" alt="Mi 3ra obra">
+    <div class="container">
+        <div class="img-box">
+            <img src="obra1.webp" alt="Descripción de la imagen">
+            <div class="info">
+                <h3>Lo que Dalí no pudo dibujar</h3>
+                <p>Descripción corta de la obra. Algo interesante sobre ella.</p>
+                <p class="precio">$100</p>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="obra2.webp" alt="Descripción de la imagen">
+            <div class="info">
+                <h3>Miguel Ángel me tiene envidia</h3>
+                <p>Descripción corta de la obra. Algo interesante sobre ella.</p>
+                <p class="precio">$100</p>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="obra3.webp" alt="Descripción de la imagen">
+            <div class="info">
+                <h3>Hecho por IA</h3>
+                <p>Descripción corta de la obra. Algo interesante sobre ella.</p>
+                <p class="precio">$100</p>
+            </div>
+        </div>
+    </div>
     <p>
         Para contactarme, por favor
         <a href="mailto:youdevs@example.com">envíame un email</a>.
